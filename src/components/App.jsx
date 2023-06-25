@@ -25,6 +25,7 @@ export default class App extends React.Component {
 
     if (prevSearch !== nextSearch) {
       this.loadPicture();
+      this.resetData();
     }
 
     if (nextPage > prevPage) {
@@ -91,6 +92,13 @@ export default class App extends React.Component {
   resetPage() {
     this.setState({
       page: 1,
+    });
+  }
+
+  resetData() {
+    this.setState({
+      pictureData: '',
+      IsLoadingMore: false,
     });
   }
 
